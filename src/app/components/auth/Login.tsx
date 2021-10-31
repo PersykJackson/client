@@ -36,16 +36,16 @@ const Login: FC = () => {
   return (
     <>
       {token && <Redirect to="/" />}
-      <Center height="100%">
-        <Box w="max-content" textAlign="center">
+      <Center display="flex" flexDirection="column" justifyContent="center" height="100%">
+        <Box w="max-content" textAlign="center" padding="25px" bg="rgba(255,255,255,0.25)" borderRadius="5px">
           <form onSubmit={onSubmit}>
-            <FormControl isRequired isInvalid={!!error}>
+            <FormControl isRequired isInvalid={!!error} padding="5px">
               <Center>
                 <FormLabel htmlFor="login">Login</FormLabel>
               </Center>
               <Input id="login" type="login" name="login" ref={login} />
             </FormControl>
-            <FormControl isRequired isInvalid={!!error}>
+            <FormControl isRequired isInvalid={!!error} padding="5px">
               <Center>
                 <FormLabel htmlFor="password">Password</FormLabel>
               </Center>
@@ -54,10 +54,13 @@ const Login: FC = () => {
                 <FormErrorMessage>{error}</FormErrorMessage>
               </Center>
             </FormControl>
-            <Button type="submit" marginTop={2}>
+            <Button type="submit" marginTop="10px" _hover={{ backgroundColor: 'pink.100' }}>
               Login
             </Button>
           </form>
+          <LinkBox marginTop="20px">
+            <Link href={REGISTRATION}>Registration</Link>
+          </LinkBox>
         </Box>
       </Center>
     </>
