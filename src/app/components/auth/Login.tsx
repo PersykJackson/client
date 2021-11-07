@@ -1,10 +1,11 @@
 import { FC, FormEventHandler, MutableRefObject, useRef, useState } from 'react';
-import { Box, Button, Center, FormControl, FormErrorMessage, FormLabel, Input } from '@chakra-ui/react';
+import { Box, Button, Center, FormControl, FormErrorMessage, FormLabel, Input, Link, LinkBox } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 import { setToken, tokenSelector } from '../../store/reducers/auth';
 import { post } from '../../request';
 import { API, AUTH_LOGIN } from '../../constants/api';
+import { REGISTRATION } from '../../constants/routes';
 
 const Login: FC = () => {
   const login: MutableRefObject<HTMLInputElement | null> = useRef(null);
