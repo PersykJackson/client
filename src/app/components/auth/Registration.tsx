@@ -46,8 +46,8 @@ const Registration: FC = () => {
   return (
     <>
       {token && <Redirect to="/" />}
-      <Center height="100%">
-        <Box w="max-content" textAlign="center" margin={10}>
+      <Center display="flex" flexDirection="column" justifyContent="center" height="100%">
+        <Box w="max-content" textAlign="center" padding="25px" bg="rgba(255,255,255,0.25)" borderRadius="5px">
           <form onSubmit={onSubmit}>
             <FormControl isRequired isInvalid={!!error}>
               <Center>
@@ -61,18 +61,18 @@ const Registration: FC = () => {
               </Center>
               <Input id="password" type="password" name="password" ref={password} />
               <Center>
-                <FormLabel htmlFor="password">Confirm password</FormLabel>
+                <FormLabel htmlFor="passwordConfirm">Confirm password</FormLabel>
               </Center>
               <Input id="passwordConfirm" type="password" name="passwordConfirm" ref={passwordConfirm} />
               <Center>
                 <FormErrorMessage>{error}</FormErrorMessage>
               </Center>
             </FormControl>
-            <Button type="submit" marginTop={2}>
+            <Button type="submit" marginTop="10px" _hover={{ backgroundColor: 'pink.100' }}>
               Register
             </Button>
           </form>
-          <Link href={LOGIN} marginTop="10px">
+          <Link href={LOGIN} marginTop="20px">
             Login
           </Link>
         </Box>
