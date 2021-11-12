@@ -36,7 +36,7 @@ const Login: FC = () => {
 
   return (
     <>
-      {token && <Redirect to="/" />}
+      {token && <Redirect to="/streams" />}
       <Center display="flex" flexDirection="column" justifyContent="center" height="100%">
         <Box w="max-content" textAlign="center" padding="25px" bg="rgba(255,255,255,0.25)" borderRadius="5px">
           <form onSubmit={onSubmit}>
