@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
 import { Box, Center, Image } from '@chakra-ui/react';
-import { get } from '../../request';
-import { API, AVAILABLE_STREAMS, HTTP_STREAM, STREAM_IMAGE } from '../../constants/api';
-import { AvailableStreamsApiData } from '../../interfaces/stream';
+import { get } from '../../../request';
+import { API, AVAILABLE_STREAMS, HTTP_STREAM, STREAM_IMAGE } from '../../../constants/api';
+import { AvailableStreamsApiData } from '../../../interfaces/stream';
 
 const StreamList: FC = () => {
   const [streams, setStreams] = useState<null | AvailableStreamsApiData>(null);
